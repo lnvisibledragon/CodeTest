@@ -24,6 +24,13 @@ class InputReader {
         br = new BufferedReader(new InputStreamReader(System.in));
     }
 
+    public String next() throws IOException {
+        while (st == null || !st.hasMoreTokens()) {
+            st = new StringTokenizer(br.readLine(), " ");
+        }
+        return st.nextToken();
+    }
+
     // 다음 토큰을 int로 읽음
     public int nextInt() throws IOException {
         while (st == null || !st.hasMoreTokens()) {
