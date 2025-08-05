@@ -1,21 +1,44 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
 
 public class Main {
 
-public static void main(String[] args)  throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
+    public static void main(String[] args) throws IOException {
+        InputReader in = new InputReader();
+        int A = in.nextInt();
+        int B = in.nextInt();
 
+        System.out.println(A+B);
 
-//공백으로 한 글자씩 구분되는 입력의 경우 StringTokenizer로 공백을 제외(대상을 " " 로)하고 입력받을 수 있다.
+        //https://solved.ac/problems
+    }
+}
 
-        // int [] targetArray = new int[100];
-        // st = new StringTokenizer(sc.readLine()," ");
-        // for(int i = 0 ; i < M ; i++){
-        //     targetArray[i] = Integer.parseInt(st.nextToken());
-        // }
+class InputReader {
+    private BufferedReader br;
+    private StringTokenizer st;
 
- System.out.println(answer);
+    public InputReader() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+    }
 
- //https://solved.ac/problems
+    // 다음 토큰을 int로 읽음
+    public int nextInt() throws IOException {
+        while (st == null || !st.hasMoreTokens()) {
+            st = new StringTokenizer(br.readLine(), " ");
+        }
+        return Integer.parseInt(st.nextToken());
+    }
+
+    // 한 줄 전체를 문자열로 읽음
+    public String nextLine() throws IOException {
+        return br.readLine();
+    }
+
+    // BufferedReader 직접 접근이 필요한 경우
+    public BufferedReader getReader() {
+        return br;
     }
 }
